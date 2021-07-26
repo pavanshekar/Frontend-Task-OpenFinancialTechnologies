@@ -1,0 +1,120 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="col-sm-12 col-md-9  block-image">
+        <div class="text-box">
+          We make it Super Simple
+        </div>
+        <img src="../../../assets/collect_img-video.png" alt="">
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-sm-12 col-md-11 ">
+        <div class="row form-box">
+          <div class="col-sm-6 col-md-7 form-one">
+            <div class="form-header text-center">
+              Eligibility Criteria
+            </div>
+            <div class="form-body p-4">
+              <form [formGroup]="loanForm">
+                <div class="mb-3">
+                  <div>
+                    <label for="disabledTextInput" class="form-label">Monthly Income</label>
+                  </div>
+                  <label for="customRange3" class="form-label w-100">{{loanForm.get('monthlyIncome').value |
+                    currency : 'INR' : 'symbol' : '1.0-0' : 'en-IN'}}</label>
+                  <input (change)="incChange()" class='w-100 custom-range bg-dark' type="range" id="customRange3"
+                    min="100000" max="300000" step="10000" formControlName="monthlyIncome">
+                  <div class="inp-range d-flex justify-content-between">
+                    <small>&#x20b9; 1,00,000</small>
+                    <small>&#x20b9; 3,00,000</small>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div>
+                    <label for="disabledTextInput" class="form-label">Monthly Expense</label>
+                  </div>
+                  <label for="customRange3" class="form-label w-100">{{loanForm.get('monthlyExpense').value |
+                    currency : 'INR' : 'symbol' : '1.0-0' : 'en-IN'}}</label>
+                  <input (change)="expChange()" class='w-100 custom-range bg-dark' type="range" id="customRange3"
+                    min="0" max="300000" step="10000" formControlName="monthlyExpense">
+                </div>
+                <div class="mb-3">
+                  <label for="select" class="form-label">Repayement Tenure</label>
+                  <select id="select" class="form-select" formControlName="repaymentTenure" (change)="tenureChange()">
+                    <option>3 Months</option>
+                    <option>6 Months</option>
+                    <option>9 Months</option>
+                    <option>12 Months</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <div class="form-check form-switch d-flex flex-row-reverse justify-content-between p-0">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+                      formControlName="existingLoan">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Do you have any existing
+                      loans?</label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="text-inp" class="form-label">EMI of exisiting loan(optional)</label>
+                  <input type="text" class="form-control text-inp" placeholder="&#x20b9;15000" id="text-inp"
+                    value='&#x20b9; 15,000' formControlName="emi">
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 form-two">
+            <div class=" d-flex flex-column pt-5 mt-5 px-4 loan-box">
+              <div class="mb-3 text-center ">
+                <label class="w-100">Loan Amount</label>
+                <span class="fs-4 text-white "> {{loanAmount | currency : 'INR' : 'symbol' : '1.0-0' : 'en-IN'
+                  }}</span>
+              </div>
+              <div class="mb-3 text-center">
+                <label class='w-100'>Your EMI will be</label>
+                <span class="fs-4 text-white"> {{emiAmount | currency : 'INR' : 'symbol' : '1.0-0' :
+                  'en-IN'}}</span>
+              </div>
+              <button class="rounded-pill px-3 py-2 border border-none bg-white"> Get Money</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="navbar-content">
+  <div class="wave">
+    <img src="../../../assets/sol_wave_bg.svg" alt="">
+  </div>
+  <div class="box-two">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col">
+          <div class="card-display">
+            <div class="cards p-3" *ngFor="let card of cards">
+              <div class="img w-full py-3">
+                <img src='../../../assets/{{card.img}}' width="60px" height="60px" alt="">
+              </div>
+              <h5 class="py-2">{{card.title}}</h5>
+              <small> {{card.label}}</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="right-two">
+            <h1>Boost your business</h1>
+            <h1>with Open</h1>
+            <div class="mt-3">
+              <div class="black-bar mt-5 mb-4"></div>
+            </div>
+            <label class="w-full mb-4">Get your hands on a term loan that's<br> crafted for your business</label><br>
+            <button class="rounded-pill my-3 px-5 py-3 getbtn"> Get an Open Account</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

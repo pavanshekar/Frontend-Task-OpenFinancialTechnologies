@@ -1,0 +1,60 @@
+.navbar-nav {
+  margin-left: auto;
+  position: sticky;
+}
+
+.submit {
+  background: transparent linear-gradient(90deg, #9F62C9 0%, #663399 100%) 0% 0% no-repeat padding-box;
+  color: white;
+  font-size: 16px;
+  width: 166px;
+  height: 45px;
+  box-shadow: 0px 0px 20px #00000033;
+}
+
+.login {
+  width: 118px;
+  height: 45px;
+  color: #663399;
+  box-shadow: 0px 0px 20px #00000033;
+  border: 2px solid #663399;
+}
+
+.login:hover {
+  background: #663399;
+  color: white;
+}
+
+.nav-item {
+  letter-spacing: 0px;
+  color: #222222;
+}
+
+
+.logo {
+  margin-left: 30px;
+  height: 10 0px;
+}
+
+.navbar-nav .nav-item:hover .nav-link:hover {
+  background: #663399;
+  color: white;
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  transition: 0.2s linear;
+  top: 0px;
+  z-index: 11;
+  padding: 10px;
+  height: 90px;
+
+}
+
+.notfixed {
+  position: static;
+  transition: 0.2s linear;
+  top: -50px;
+  height: 100px;
+}
